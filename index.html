@@ -108,6 +108,30 @@ section{padding:var(--s9) 0}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:.04em;background:var(--g-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
 .stat-desc{font-size:.78rem;color:var(--text-3);margin-top:var(--s1);line-height:1.4}
 
+/* EDUCATION */
+.edu-timeline{position:relative;display:flex;flex-direction:column;gap:var(--s8);padding:var(--s3) 0}
+.edu-timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,rgba(167,139,250,.28),rgba(167,139,250,.06));transform:translateX(-50%)}
+.edu-item{position:relative;display:grid;grid-template-columns:1fr 96px 1fr;align-items:center;gap:var(--s6)}
+.edu-item-left .edu-card{grid-column:1}
+.edu-item-right .edu-card{grid-column:3}
+.edu-item-left .edu-card{justify-self:end}
+.edu-item-right .edu-card{justify-self:start}
+.edu-center{grid-column:2;position:relative;display:flex;align-items:center;justify-content:center;z-index:2;min-height:64px}
+.edu-node{width:64px;height:64px;border-radius:50%;background:linear-gradient(145deg,#7da6ff,#8ea0ff);display:flex;align-items:center;justify-content:center;font-size:1.35rem;color:#fff;box-shadow:0 0 0 4px rgba(96,165,250,.1),0 12px 30px rgba(96,165,250,.3);border:3px solid var(--ink)}
+.edu-year{position:absolute;top:50%;font-size:1.02rem;font-weight:500;color:#8b90b1;white-space:nowrap;transform:translateY(-50%)}
+.edu-item-left .edu-year{left:80px;text-align:left}
+.edu-item-right .edu-year{right:80px;text-align:right}
+.edu-card{background:rgba(12,15,48,.9);border:1px solid rgba(130,142,223,.18);border-radius:var(--r-md);padding:var(--s5) var(--s6);transition:border-color .25s,transform .25s,box-shadow .25s;position:relative;max-width:500px;width:100%}
+.edu-card:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.edu-card:hover{box-shadow:0 14px 36px rgba(10,15,60,.35)}
+.edu-item-left .edu-card::after,.edu-item-right .edu-card::after{content:'';position:absolute;top:34px;width:12px;height:12px;background:rgba(12,15,48,.9);border-top:1px solid rgba(130,142,223,.18);border-right:1px solid rgba(130,142,223,.18);transform:rotate(45deg)}
+.edu-item-left .edu-card::after{right:-6px}
+.edu-item-right .edu-card::after{left:-6px;transform:rotate(225deg)}
+.edu-grade{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.03em;margin-bottom:2px}
+.edu-degree{font-size:1.02rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.edu-inst{font-size:.95rem;color:var(--text-2);margin-bottom:var(--s3)}
+.edu-score{font-size:.88rem;color:var(--text-3)}
+
 /* SKILLS */
 .skills-layout{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4)}
 .skill-cat{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s5);transition:border-color .25s,transform .25s}
@@ -389,6 +413,15 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
   .hero-right{order:-1}.hero-bio{margin:0 auto var(--s6)}.hero-actions{justify-content:center}
   .hero-photo-frame{width:260px;height:340px}
   .about-grid{grid-template-columns:1fr}.projects-grid{grid-template-columns:1fr}
+  .edu-timeline::before{left:24px;transform:none}
+  .edu-item{grid-template-columns:48px 1fr;gap:var(--s4);align-items:flex-start}
+  .edu-item-left .edu-card,.edu-item-right .edu-card{grid-column:2}
+  .edu-item-left .edu-card,.edu-item-right .edu-card{justify-self:stretch;max-width:none}
+  .edu-center{grid-column:1;justify-content:flex-start;align-items:center;min-height:auto;padding-top:2px;display:flex;flex-direction:column;gap:8px}
+  .edu-node{width:44px;height:44px;font-size:1rem;border-width:3px}
+  .edu-year{position:static;font-size:.78rem;transform:none;letter-spacing:.03em;text-align:center}
+  .edu-item-left .edu-year,.edu-item-right .edu-year{left:auto;right:auto}
+  .edu-item-left .edu-card::after,.edu-item-right .edu-card::after{display:none}
   .certs-grid{grid-template-columns:1fr}.awards-row{grid-template-columns:1fr 1fr}
   .contact-panel{grid-template-columns:1fr}.pub-stat-row{grid-template-columns:1fr 1fr}
   .contact-form-grid{grid-template-columns:1fr}
@@ -409,6 +442,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
   <span class="nav-brand">OM BHUTKAR</span>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#publication">Publication</a></li>
@@ -481,9 +515,56 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
   </div>
 </section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="reveal"><span class="sec-label">02 — Education</span></div>
+  <div class="reveal reveal-delay-1">
+    <h2 class="sec-title">Academic <em>Journey</em></h2>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="edu-timeline">
+    <div class="edu-item edu-item-left reveal reveal-delay-1">
+      <div class="edu-card">
+        <div class="edu-grade">10th</div>
+        <div class="edu-degree">MSBSHSE</div>
+        <div class="edu-inst">T.L Joshi Vidyalaya Wai</div>
+        <div class="edu-score">Percentage: <strong style="color:var(--text)">91 / 100</strong></div>
+      </div>
+      <div class="edu-center">
+        <div class="edu-node">🎓</div>
+        <span class="edu-year">2020</span>
+      </div>
+    </div>
+    <div class="edu-item edu-item-right reveal reveal-delay-2">
+      <div class="edu-center">
+        <div class="edu-node">🎓</div>
+        <span class="edu-year">2022</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-grade">12th</div>
+        <div class="edu-degree">MSBSHSE</div>
+        <div class="edu-inst">Disha Academy, Wai</div>
+        <div class="edu-score">Percentage: <strong style="color:var(--text)">82.67 / 100</strong></div>
+      </div>
+    </div>
+    <div class="edu-item edu-item-left reveal reveal-delay-3">
+      <div class="edu-card">
+        <div class="edu-grade">B.Tech</div>
+        <div class="edu-degree">Computer Engineering</div>
+        <div class="edu-inst">MIT Academy of Engineering, Pune</div>
+        <div class="edu-score">CGPA: <strong style="color:var(--text)">8.41 / 10</strong></div>
+      </div>
+      <div class="edu-center">
+        <div class="edu-node">🎓</div>
+        <span class="edu-year">2022 - 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
-  <div class="reveal"><span class="sec-label">02 — Skills</span></div>
+  <div class="reveal"><span class="sec-label">03 — Skills</span></div>
   <div class="reveal reveal-delay-1">
     <h2 class="sec-title">Tech I <em>Work With</em></h2>
     <div class="sec-rule"></div>
@@ -526,7 +607,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="reveal"><span class="sec-label">03 — Projects</span></div>
+  <div class="reveal"><span class="sec-label">04 — Projects</span></div>
   <div class="reveal reveal-delay-1">
     <h2 class="sec-title">Things I've <em>Built</em></h2>
     <div class="sec-rule"></div>
@@ -589,7 +670,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
 
 <!-- PUBLICATION -->
 <section id="publication">
-  <div class="reveal"><span class="sec-label">04 — Research</span></div>
+  <div class="reveal"><span class="sec-label">05 — Research</span></div>
   <div class="reveal reveal-delay-1">
     <h2 class="sec-title">IEEE <em>Publication</em></h2>
     <div class="sec-rule"></div>
@@ -678,7 +759,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="reveal"><span class="sec-label">05 — Experience</span></div>
+  <div class="reveal"><span class="sec-label">06 — Experience</span></div>
   <div class="reveal reveal-delay-1">
     <h2 class="sec-title">Where I've <em>Worked</em></h2>
     <div class="sec-rule"></div>
@@ -701,6 +782,19 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
     <div class="exp-entry reveal reveal-delay-2">
       <div class="exp-dot-wrap"><div class="exp-dot"></div></div>
       <div class="exp-content">
+        <div class="exp-period">Jun 2025 — Aug 2025</div>
+        <div class="exp-role">Python &amp; Django Intern</div>
+        <div class="exp-org"><strong>BrainyBeam Technologies Pvt. Ltd.</strong></div>
+        <ul class="exp-bullets">
+          <li>Developed backend modules in Django for authentication, role-based access, and CRUD workflows to support production-ready web features</li>
+          <li>Built and integrated REST APIs with database operations, improving data flow between frontend and backend and reducing manual processing overhead</li>
+        </ul>
+        <div class="exp-chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">REST APIs</span><span class="chip">MySQL</span></div>
+      </div>
+    </div>
+    <div class="exp-entry reveal reveal-delay-3">
+      <div class="exp-dot-wrap"><div class="exp-dot"></div></div>
+      <div class="exp-content">
         <div class="exp-period">Aug 2024 — Present</div>
         <div class="exp-role">Technical Team Member</div>
         <div class="exp-org"><strong>Coding Ninja 10x Club</strong> · MIT Academy of Engineering</div>
@@ -710,7 +804,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
         </ul>
       </div>
     </div>
-    <div class="exp-entry reveal reveal-delay-3">
+    <div class="exp-entry reveal reveal-delay-4">
       <div class="exp-dot-wrap"><div class="exp-dot"></div></div>
       <div class="exp-content">
         <div class="exp-period">2025 · IIT (BHU) Varanasi</div>
@@ -727,7 +821,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
-  <div class="reveal"><span class="sec-label">06 — Credentials</span></div>
+  <div class="reveal"><span class="sec-label">07 — Credentials</span></div>
   <div class="reveal reveal-delay-1">
     <h2 class="sec-title">Certifications &amp; <em>Awards</em></h2>
     <div class="sec-rule"></div>
@@ -773,7 +867,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
 <section id="contact">
   <div class="contact-panel reveal">
     <div style="position:relative;z-index:1;">
-      <span class="sec-label">07 — Contact</span>
+      <span class="sec-label">08 — Contact</span>
       <h2 class="contact-heading">Let's Build<br><em>Together</em></h2>
       <p class="contact-sub">I'm actively looking for full-time roles and internships in AI/ML and software engineering. If you have an interesting problem, I'd love to hear about it.</p>
     </div>

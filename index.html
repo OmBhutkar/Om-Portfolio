@@ -347,6 +347,16 @@ section{padding:var(--s9) 0}
 .contact-heading em{font-style:normal;background:var(--g-cool);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .contact-sub{font-size:.9rem;line-height:1.75;color:var(--text-2);margin-bottom:var(--s6)}
 .contact-right{display:flex;flex-direction:column;gap:var(--s4);position:relative;z-index:1}
+.contact-form{display:flex;flex-direction:column;gap:var(--s3);padding:var(--s4);background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:var(--r-md)}
+.contact-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.contact-field{display:flex;flex-direction:column;gap:6px}
+.contact-field label{font-size:.78rem;font-weight:600;color:var(--text-2)}
+.contact-input,.contact-textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;padding:12px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.contact-textarea{min-height:130px;resize:vertical}
+.contact-input::placeholder,.contact-textarea::placeholder{color:var(--text-3)}
+.contact-input:focus,.contact-textarea:focus{border-color:rgba(167,139,250,.55);box-shadow:0 0 0 3px rgba(167,139,250,.14)}
+.contact-submit{align-self:flex-start;padding:12px 22px}
+.contact-form-note{font-size:.72rem;color:var(--text-3);line-height:1.5}
 .contact-row{display:flex;align-items:center;gap:var(--s4);padding:var(--s4) var(--s5);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--r-md);text-decoration:none;color:var(--text-2);font-size:.88rem;transition:border-color .2s,background .2s,transform .2s}
 .contact-row:hover{border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.05);transform:translateX(4px);color:var(--text)}
 .contact-row-icon{font-size:1.2rem;flex-shrink:0}
@@ -382,6 +392,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
   .about-grid{grid-template-columns:1fr}.projects-grid{grid-template-columns:1fr}
   .certs-grid{grid-template-columns:1fr}.awards-row{grid-template-columns:1fr 1fr}
   .contact-panel{grid-template-columns:1fr}.pub-stat-row{grid-template-columns:1fr 1fr}
+  .contact-form-grid{grid-template-columns:1fr}
   #nav{gap:var(--s4)}.nav-links{display:none}
 }
 @media(max-width:560px){.page-wrap{padding:0 var(--s5)}.skills-layout{grid-template-columns:1fr}.awards-row{grid-template-columns:1fr}.contact-panel{padding:var(--s6) var(--s5)}.pub-stat-row{grid-template-columns:1fr}}
@@ -768,6 +779,27 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
       <p class="contact-sub">I'm actively looking for full-time roles and internships in AI/ML and software engineering. If you have an interesting problem, I'd love to hear about it.</p>
     </div>
     <div class="contact-right">
+      <form class="contact-form" action="https://formsubmit.co/ombhutkar11@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New message from portfolio contact form">
+        <input type="hidden" name="_template" value="table">
+        <div class="contact-form-grid">
+          <div class="contact-field">
+            <label for="contact-name">Your Name</label>
+            <input class="contact-input" id="contact-name" name="name" type="text" placeholder="What's your name?" required>
+          </div>
+          <div class="contact-field">
+            <label for="contact-email">Email</label>
+            <input class="contact-input" id="contact-email" name="email" type="email" placeholder="How can I reach you?" required>
+          </div>
+        </div>
+        <div class="contact-field">
+          <label for="contact-message">Message</label>
+          <textarea class="contact-textarea" id="contact-message" name="message" placeholder="Send me any inquiries or questions" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-fill contact-submit">Send Message</button>
+        <p class="contact-form-note">Messages from this form are sent to ombhutkar11@gmail.com.</p>
+      </form>
       <a href="mailto:ombhutkar11@gmail.com" class="contact-row">
         <span class="contact-row-icon">✉️</span>
         <div><span class="contact-row-label">Email</span><span class="contact-row-value">ombhutkar11@gmail.com</span></div>

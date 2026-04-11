@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Om Bhutkar | AI/ML Engineer</title>
+<title>Om Bhutkar — AI/ML Engineer</title>
 
 <link rel="icon" type="image/jpeg" href="favicon.jpg">
 
@@ -81,6 +81,9 @@ section{padding:var(--s9) 0}
 .btn-fill:hover{box-shadow:0 16px 48px rgba(124,58,237,.45)}
 .btn-ghost{background:transparent;color:var(--text-2);border:1px solid var(--line-2)}
 .btn-ghost:hover{border-color:var(--violet);color:var(--text);background:rgba(167,139,250,.05)}
+.btn-resume{position:relative;overflow:hidden;font-weight:800;animation:resumePulse 2.4s ease-in-out infinite}
+.btn-resume::before{content:'';position:absolute;top:0;bottom:0;left:-140%;width:50%;background:linear-gradient(90deg,transparent,rgba(167,139,250,.35),transparent);transform:skewX(-18deg);animation:resumeShine 2.8s ease-in-out infinite}
+.btn-resume:hover{box-shadow:0 0 0 1px rgba(167,139,250,.35),0 10px 26px rgba(124,58,237,.28)}
 
 /* HERO RIGHT */
 .hero-right{position:relative;display:flex;justify-content:center;align-items:center;opacity:0;animation:fadeIn 1.2s 1.1s cubic-bezier(.22,1,.36,1) forwards}
@@ -356,7 +359,8 @@ section{padding:var(--s9) 0}
 .certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s4);margin-bottom:var(--s7)}
 .cert-card{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s5);display:grid;grid-template-columns:52px 1fr;gap:var(--s4);align-items:start;transition:border-color .25s,transform .25s}
 .cert-card:hover{border-color:rgba(167,139,250,.35);transform:translateY(-3px)}
-.cert-icon{width:52px;height:52px;border-radius:var(--r-sm);background:linear-gradient(135deg,rgba(167,139,250,.15),rgba(96,165,250,.1));border:1px solid rgba(167,139,250,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.cert-icon{width:52px;height:52px;border-radius:var(--r-sm);background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;padding:6px}
+.cert-logo{width:100%;height:100%;object-fit:contain;display:block}
 .cert-title{font-size:.9rem;font-weight:600;margin-bottom:3px;line-height:1.3}
 .cert-issuer{font-size:.78rem;color:var(--violet);margin-bottom:3px}
 .cert-meta{font-size:.75rem;color:var(--text-3)}
@@ -413,6 +417,8 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeDown{from{opacity:0;transform:translate(-50%,-16px)}to{opacity:1;transform:translate(-50%,0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes resumePulse{0%,100%{box-shadow:0 0 0 0 rgba(167,139,250,.22)}50%{box-shadow:0 0 0 6px rgba(167,139,250,0)}}
+@keyframes resumeShine{0%,52%{left:-140%}72%{left:160%}100%{left:160%}}
 
 /* RESPONSIVE */
 @media(max-width:1024px){.skills-layout{grid-template-columns:repeat(2,1fr)}.pub-card{grid-template-columns:1fr}}
@@ -478,7 +484,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-fill">View My Work &nbsp;↓</a>
-      <a href="#contact" class="btn btn-ghost">Say Hello</a>
+      <a href="https://drive.google.com/drive/folders/1q_aacRn3ybwJ4my7s7biQSoecQqZLIDN?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-resume">View Resume</a>
     </div>
   </div>
 
@@ -587,6 +593,8 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
       <div class="skill-item"><div class="skill-item-top"><span>Python</span><span class="skill-item-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>SQL</span><span class="skill-item-pct">82%</span></div><div class="skill-track"><div class="skill-fill" data-w="82"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>JavaScript</span><span class="skill-item-pct">74%</span></div><div class="skill-track"><div class="skill-fill" data-w="74"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>HTML</span><span class="skill-item-pct">86%</span></div><div class="skill-track"><div class="skill-fill" data-w="86"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>CSS</span><span class="skill-item-pct">84%</span></div><div class="skill-track"><div class="skill-fill" data-w="84"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>C / C++</span><span class="skill-item-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
     </div>
     <div class="skill-cat reveal reveal-delay-2">
@@ -596,20 +604,26 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
       <div class="skill-item"><div class="skill-item-top"><span>Deep Learning</span><span class="skill-item-pct">87%</span></div><div class="skill-track"><div class="skill-fill" data-w="87"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>NLP</span><span class="skill-item-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>Generative AI / LLMs</span><span class="skill-item-pct">82%</span></div><div class="skill-track"><div class="skill-fill" data-w="82"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>Feature Engineering</span><span class="skill-item-pct">84%</span></div><div class="skill-track"><div class="skill-fill" data-w="84"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>Vector Search / Embeddings</span><span class="skill-item-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
     </div>
     <div class="skill-cat reveal reveal-delay-3">
       <div class="skill-cat-icon">🔗</div>
       <div class="skill-cat-title">Frameworks</div>
       <div class="skill-item"><div class="skill-item-top"><span>LangChain / RAG</span><span class="skill-item-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>PyTorch</span><span class="skill-item-pct">82%</span></div><div class="skill-track"><div class="skill-fill" data-w="82"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>TensorFlow</span><span class="skill-item-pct">84%</span></div><div class="skill-track"><div class="skill-fill" data-w="84"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>Scikit-learn</span><span class="skill-item-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>FastAPI</span><span class="skill-item-pct">81%</span></div><div class="skill-track"><div class="skill-fill" data-w="81"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>Flask / Streamlit</span><span class="skill-item-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88"></div></div></div>
-      <div class="skill-item"><div class="skill-item-top"><span>Tailwind CSS</span><span class="skill-item-pct">76%</span></div><div class="skill-track"><div class="skill-fill" data-w="76"></div></div></div>
     </div>
     <div class="skill-cat reveal reveal-delay-4">
       <div class="skill-cat-icon">⚙️</div>
       <div class="skill-cat-title">Tools & Ops</div>
       <div class="skill-item"><div class="skill-item-top"><span>Docker</span><span class="skill-item-pct">74%</span></div><div class="skill-track"><div class="skill-fill" data-w="74"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>MLOps</span><span class="skill-item-pct">76%</span></div><div class="skill-track"><div class="skill-fill" data-w="76"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>MLflow</span><span class="skill-item-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
+      <div class="skill-item"><div class="skill-item-top"><span>Git / GitHub</span><span class="skill-item-pct">86%</span></div><div class="skill-track"><div class="skill-fill" data-w="86"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>MySQL</span><span class="skill-item-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
       <div class="skill-item"><div class="skill-item-top"><span>REST APIs</span><span class="skill-item-pct">82%</span></div><div class="skill-track"><div class="skill-fill" data-w="82"></div></div></div>
     </div>
@@ -630,7 +644,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
         <div class="project-number">PROJECT 01</div>
         <h3 class="project-title">Raga Prediction System</h3>
         <p class="project-desc">Automated analysis of Indian classical music using a CNN + LSTM pipeline. Real-time raga classification via spectrogram analysis, confidence-weighted predictions, and automated PDF report generation with pitch contour visualisation.</p>
-        <div class="project-stack"><span class="tag">Python</span><span class="tag">CNN</span><span class="tag">LSTM</span><span class="tag">TensorFlow</span><span class="tag">Flask</span><span class="tag">Tailwind CSS</span></div>
+        <div class="project-stack"><span class="tag">Python</span><span class="tag">CNN</span><span class="tag">LSTM</span><span class="tag">TensorFlow</span><span class="tag">Librosa</span><span class="tag">Flask</span><span class="tag">Model Deployment</span></div>
         <div class="project-footer">
           <a href="#" class="project-link">View Project <span>→</span></a>
           <span style="font-size:.72rem;color:var(--text-3)">Jan – Apr 2025</span>
@@ -643,7 +657,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
         <div class="project-number">PROJECT 02</div>
         <h3 class="project-title">Resumate AI</h3>
         <p class="project-desc">AI-powered resume analyser that scores 10+ resume sections using TF-IDF and Naive Bayes, predicts career paths, matches jobs via API, runs an AI interview module, and provides an admin analytics dashboard with K-Means clustering. <strong style="color:var(--violet);font-size:.8rem">IEEE Published.</strong></p>
-        <div class="project-stack"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Streamlit</span><span class="tag">TF-IDF</span><span class="tag">Naive Bayes</span><span class="tag">Plotly</span></div>
+        <div class="project-stack"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Streamlit</span><span class="tag">TF-IDF</span><span class="tag">Naive Bayes</span><span class="tag">K-Means</span><span class="tag">Plotly</span><span class="tag">ATS Scoring</span></div>
         <div class="project-footer">
           <a href="https://resumate-ai.streamlit.app" target="_blank" class="project-link">Live Demo <span>→</span></a>
           <span style="font-size:.72rem;color:var(--text-3)">Jun 2024 – Jun 2025</span>
@@ -656,7 +670,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
         <div class="project-number">PROJECT 03</div>
         <h3 class="project-title">Market Sentiment Analyser</h3>
         <p class="project-desc">Pulls real-time financial news via News API, runs sentiment scoring, and overlays scores against asset price movements on an interactive dashboard with date-range and asset filters.</p>
-        <div class="project-stack"><span class="tag">Python</span><span class="tag">News API</span><span class="tag">Sentiment Analysis</span><span class="tag">HTML/CSS/JS</span></div>
+        <div class="project-stack"><span class="tag">Python</span><span class="tag">News API</span><span class="tag">Sentiment Analysis</span><span class="tag">Time Series</span><span class="tag">Dashboarding</span><span class="tag">HTML/CSS/JS</span></div>
         <div class="project-footer">
           <a href="https://github.com/ombhutkar" target="_blank" class="project-link">GitHub <span>→</span></a>
           <span style="font-size:.72rem;color:var(--text-3)">May – Jun 2025</span>
@@ -669,7 +683,7 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
         <div class="project-number">PROJECT 04</div>
         <h3 class="project-title">Law ChatBot</h3>
         <p class="project-desc">• Developed an AI Chatbot for IPC Section Assistance.<br>• Used NLP and keyword extraction to interpret user queries.<br>• Retrieved relevant IPC sections based on query context.<br>• Integrated dictionary APIs for accurate legal terminology.<br>• Ensured quick and reliable legal guidance for users.</p>
-        <div class="project-stack"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Keyword Extraction</span><span class="tag">Dictionary APIs</span><span class="tag">Legal AI</span></div>
+        <div class="project-stack"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Keyword Extraction</span><span class="tag">Intent Classification</span><span class="tag">Dictionary APIs</span><span class="tag">Legal AI</span><span class="tag">Chatbot Design</span></div>
         <div class="project-footer">
           <span style="font-size:.78rem;color:var(--text-3)">AI Legal Assistant Project</span>
           <span style="font-size:.72rem;color:var(--text-3)">Personal Project</span>
@@ -839,20 +853,28 @@ footer{position:relative;z-index:10;border-top:1px solid var(--line);padding:var
   </div>
   <div class="certs-grid">
     <div class="cert-card reveal reveal-delay-1">
-      <div class="cert-icon">☁️</div>
+      <div class="cert-icon"><img class="cert-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='18' fill='white'/%3E%3Ctext x='60' y='68' font-family='Arial,sans-serif' font-size='24' font-weight='700' text-anchor='middle' fill='%23F80000'%3EORACLE%3C/text%3E%3C/svg%3E" alt="Oracle logo" loading="lazy"></div>
       <div><div class="cert-title">OCI 2024 Generative AI Certified Professional</div><div class="cert-issuer">Oracle</div><div class="cert-meta">Aggregate 90/100 · AIML, Data Science, LLM expertise</div></div>
     </div>
     <div class="cert-card reveal reveal-delay-2">
-      <div class="cert-icon">🔬</div>
+      <div class="cert-icon"><img class="cert-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='18' fill='white'/%3E%3Ctext x='60' y='68' font-family='Arial,sans-serif' font-size='24' font-weight='700' text-anchor='middle' fill='%23F80000'%3EORACLE%3C/text%3E%3C/svg%3E" alt="Oracle logo" loading="lazy"></div>
       <div><div class="cert-title">OCI 2025 Data Science Professional</div><div class="cert-issuer">Oracle</div><div class="cert-meta">Aggregate 90/100 · OCI-based ML workflows and deployment</div></div>
     </div>
     <div class="cert-card reveal reveal-delay-3">
-      <div class="cert-icon">🏅</div>
+      <div class="cert-icon"><img class="cert-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='18' fill='white'/%3E%3Ccircle cx='60' cy='44' r='18' fill='%230f4c81'/%3E%3Ccircle cx='60' cy='44' r='10' fill='white'/%3E%3Ctext x='60' y='86' font-family='Arial,sans-serif' font-size='24' font-weight='700' text-anchor='middle' fill='%230f4c81'%3ENPTEL%3C/text%3E%3C/svg%3E" alt="NPTEL logo" loading="lazy"></div>
       <div><div class="cert-title">Silver Medal — Cloud Computing</div><div class="cert-issuer">NPTEL</div><div class="cert-meta">81% · Top performers nationwide</div></div>
     </div>
     <div class="cert-card reveal reveal-delay-4">
-      <div class="cert-icon">⭐</div>
+      <div class="cert-icon"><img class="cert-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='18' fill='white'/%3E%3Ccircle cx='60' cy='44' r='18' fill='%230f4c81'/%3E%3Ccircle cx='60' cy='44' r='10' fill='white'/%3E%3Ctext x='60' y='86' font-family='Arial,sans-serif' font-size='24' font-weight='700' text-anchor='middle' fill='%230f4c81'%3ENPTEL%3C/text%3E%3C/svg%3E" alt="NPTEL logo" loading="lazy"></div>
       <div><div class="cert-title">Elite Certificate — Data Analytics with Python</div><div class="cert-issuer">NPTEL</div><div class="cert-meta">68% · Elite Certificate Holder</div></div>
+    </div>
+    <div class="cert-card reveal reveal-delay-1">
+      <div class="cert-icon"><img class="cert-logo" src="https://cdn.simpleicons.org/databricks/FF3621" alt="Databricks logo" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div><div class="cert-title">Databricks Accredited Generative AI Fundamentals</div><div class="cert-issuer">Databricks Academy</div><div class="cert-meta">Issued: Sep 1, 2024 · Expires: Sep 1, 2026</div></div>
+    </div>
+    <div class="cert-card reveal reveal-delay-2">
+      <div class="cert-icon"><img class="cert-logo" src="https://cdn.simpleicons.org/cisco/1BA0D7" alt="Cisco logo" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div><div class="cert-title">Cisco AICTE Virtual Internship Program — Cybersecurity</div><div class="cert-issuer">Cisco Networking Academy</div><div class="cert-meta">May - Jul 2024 · Virtual Internship Completion</div></div>
     </div>
   </div>
   <div class="awards-row">
